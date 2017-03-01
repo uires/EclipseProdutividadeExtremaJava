@@ -20,13 +20,10 @@ public class TesteGastos {
 		System.out.println(gasto);
 		System.out.println(gasto2);
 		System.out.println(gasto3);
-		System.out.println(gasto4);
-		
+		System.out.println(gasto4);		
 		
 		funcionario.setBonificacao(3000.1);
-		funcionario.sacaBonus(400);
-		
-		
+		funcionario.sacaBonus(400);		
 		
 		
 		
