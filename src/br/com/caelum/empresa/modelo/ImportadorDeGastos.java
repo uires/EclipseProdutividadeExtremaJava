@@ -13,22 +13,24 @@ import br.com.caelum.curso.Funcionario;
 public class ImportadorDeGastos {
 
 	public List<Gasto> importa(InputStream entrada) throws ParseException {
+		SimpleDateFormat df = new SimpleDateFormat("ddMMyyyy");
+		
 		Scanner leitor = new Scanner(entrada);
 		List<Gasto> gastos = new ArrayList<Gasto>();
 		
 		while (leitor.hasNextLine()) {
-			SimpleDateFormat df = new SimpleDateFormat("ddMMyyyy");
+			
 			String linhas = leitor.nextLine();
 			String tipoDeGastos = linhas.substring(0, 6);
 			String dataGastoTxt = linhas.substring(6, 14);
-			String vl = linhas.substring(14, 23);
-			String mat = linhas.substring(23, 26);
+			String valortxt = linhas.substring(14, 23);
+			String matriculaTxt = linhas.substring(23, 26);
 			String nome = linhas.substring(26, 56);
 			String dataNascTxt = linhas.substring(56);
 			
-			double valor = Double.parseDouble(vl);
+			double valor = Double.parseDouble(valortxt);
 			
-			int matricula = Integer.parseInt(mat);
+			int matricula = Integer.parseInt(matriculaTxt);
 						
 			Calendar dataNascimento = Calendar.getInstance();			
 			dataNascimento.setTime(df.parse(dataNascTxt));
