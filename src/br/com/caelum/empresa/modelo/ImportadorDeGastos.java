@@ -36,7 +36,7 @@ public class ImportadorDeGastos {
 
 			Calendar dataDespesa = converteDataTxtParaCalendar(dataGastoTxt);
 
-			Funcionario funcionario = new Funcionario(nome, matricula,
+			Funcionario funcionario 	= new Funcionario(nome, matricula,
 					dataNascimento);
 			gastos.add(new Gasto(valor, tipoDeGastos, funcionario, dataDespesa));
 		}
